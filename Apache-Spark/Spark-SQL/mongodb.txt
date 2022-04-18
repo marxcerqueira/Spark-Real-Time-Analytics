@@ -5,8 +5,6 @@
 
 1- Abra o prompt de comando ou terminal e inicialize o MongoDB com o comando: mongod.
 
-
-
 # Para MacOS, Linux e Windows:
 
 2- Abra outro prompt de comando ou terminal e digite: mongo
@@ -37,10 +35,13 @@ $SPARK_HOME/bin/pyspark --packages org.mongodb.spark:mongo-spark-connector_2.11:
 
 Use este comando com Apache Spark 2.4.2 ou inferior:
 
-$SPARK_HOME/bin/pyspark --packages org.mongodb.spark:mongo-spark-connector_2.12:2.4.0
-
+$SPARK_HOME/bin/pyspark --packages org.mongodb.spark:mongo-spark-connector_2.12:3.0.1
 
 Dependendo de quando você fizer o download do Apache Spark, o suporte a linguagem Scala já pode ter sido atualizado e portanto você pode usar o comando $SPARK_HOME/bin/pyspark --packages org.mongodb.spark:mongo-spark-connector_2.12:2.4.0 para todos os casos.
 
- 
+###### para iniciar Spark com conexão com o MongoDB #####
+# devo mudar o nome do banco e da collection
 
+$SPARK_HOME//bin/pyspark --conf "spark.mongodb.input.uri=mongodb://127.0.0.1/test_db.test_collection?readPreference=primaryPreferred" \
+              --conf "spark.mongodb.output.uri=mongodb://127.0.0.1/test_db.test_collection" \
+              --packages org.mongodb.spark:mongo-spark-connector_2.12:3.0.2

@@ -8,6 +8,7 @@
 *.elf
 *.pdf
 *.zip
+*.csv
 
 # Linker output
 *.ilk
